@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB Kez</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+    <script src="ab.js"></script>
+</head>
+<body onload="loadPage()">
+    <header>
+        <nav>AB kez</nav>
+    </header>
+    <main>
+        <div class="line">
+            <div>
+                <input type="button" onclick="getAll()" value="getall">
+            </div>
+            <div>
+                <input type="button" onclick="getLast()" value="getlast">
+            </div>
+            <div>
+                <input type="button" onclick="getOne()" value="getone">
+            </div>
+            <div>
+                <input type="button" onclick="deleteOne()" value="deleteone">
+            </div>
+            <div>
+                <input type="button" onclick="deleteAll()" value="deleteall">
+            </div>
+            <div>
+                <input type="button" onclick="updateOne()" value="updateone">
+            </div>
+            <div>
+                <input type="button" onclick="writeOne()" value="writeone">
+            </div>
+
+        </div>
+
+
+        <div class="line">
+
+            <div>
+                <label for="link">Link:</label><br>
+                <input type="text" id="link" name="link" value="http://walaki.infora.hu/AB/api/v0.1/" size=35">
+                <select id="links" name="links" onchange="changedLinks(this.value)">
+                    <option value="http://walaki.infora.hu/AB/api/v0.1/" selected>http://walaki.infora.hu/AB/api/v0.1/</option>
+                    <option value="http://walaki.infora.hu/AB/api/v0.2/">http://walaki.infora.hu/AB/api/v0.2/</option>
+                    <option value="http://141.147.47.82/AB/api/v0.1/">http://141.147.47.82/AB/api/v0.1/</option>
+                    <option value="http://141.147.47.82/AB/api/v0.2/">http://141.147.47.82/AB/api/v0.2/</option>
+                    <option value="http://oubi.blathy.hu/AB/api/v0.1/">http://oubi.blathy.hu/AB/api/v0.1/</option>
+                    
+                </select>                    
+            </div>
+            <div>
+                <label for="lapikey">ApiKey:</label><br>
+                <input type="password" id="lapikey" name="lapikey" value="A!89e#zu2.lS:56" size="15">
+            </div>
+            <div>
+                <p>&nbsp;</p>
+                <input type="checkbox" id="withapikey" name="withapikey" value="WithApiKey">
+                <label for="withapikey">WithApiKey</label>
+            </div>
+            <div>
+                <br>
+                <p id="status">-</p>
+            </div>
+            <div>
+                <br>
+                <p id="statusText">-</p>
+            </div>
+            <div>
+                <br>
+                <p id="sendData">-</p>
+            </div>
+        </div>
+
+
+        <div id="tableedit">
+
+            <table>
+                <tr class="edit">
+                    <td class="thid">
+                        <label for="id">id:</label><br>
+                        <input type="number" id="id" name="id" value="0" min="0" max="4294967295" size="5" maxlength="5">
+                    </td>
+                    <td class="thintdata">
+                        <label for="intdata">intdata:</label><br>
+                        <input type="number" id="intdata" name="intdata" value="" min="-2147483648" max="2147483647" size="5" maxlength="5">
+                    </td>
+                    <td class="thfloatdata">
+                        <label for="floatdata">floatdata:</label><br>
+                        <input type="number" id="floatdata" name="floatdata" value="" step="0.5" min="-2147483648" max="2147483647" size="5" maxlength="5">
+                    </td>
+                    <td class="thbooldata">
+                        <label for="booldata">booldata:</label><br>
+                        <input type="number" id="booldata" name="booldata" value="" min="-0" max="1" size="5" maxlength="5" size="5">
+                    </td>
+                    <td class="thdatedata">   
+                        <label for="datedata">datedata:</label><br>
+                        <input type="datetime-local" id="datedata" name="datedata">
+                    </td>
+                    <td class="thcomment">
+                        <label for="comment">comment:</label><br>
+                        <input type="text" id="comment" name="comment" value="" size="50">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="tablediv">
+
+            <table>
+                <tr class="tcimsor">
+                    <th class="thid">id</th><th class="thintdata">intdata</th><th class="thfloatdata">floatdata</th><th class="thbooldata">booldata</th><th class="thdatedata">datedata</th><th class="thcomment">comment</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>by Walaki</p>
+    </footer>
+</body>

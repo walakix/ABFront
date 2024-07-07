@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(71, 101, 235);
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    /*background-color: rgb(68, 163, 252);*/
+}
+main {
+    background-color: rgb(68, 163, 252);
+    color: white;
+    height: 800px;
+    /*width: 80%;*/
+    padding: 0 10%;
+}
+
+footer {
+    background-color: rgb(71, 101, 235);
+    color: white;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.line {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*margin: 10px;*/
+}
+
+.line div {
+    margin: 2px 5px;
+}
+
+input[type=button] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 80px;
+}
+
+table {
+    width: 100%;
+}
+
+.tcimsor {
+    background-color: rgb(199, 197, 197);
+    color: rgb(0, 0, 0);
+   
+}
+th {
+    padding: 8px;
+    margin: auto auto;
+}
+tr.datas td {
+    background-color: white;
+    color: black;
+    padding: 4px;
+    margin: auto auto;
+}
+
+select {
+    width: 20px;
+}
+
+.thid{
+    width: 50px;
+}
+.thintdata {
+    width: 70px;
+}
+.thfloatdata {
+    width: 100px;
+}
+.thbooldata {
+    width: 50px;
+}
+.thdatedata {
+    width: 224px;
+}
+
+tr.edit td.thid {
+    width: 62px;
+    padding-right: 3px;
+}
+tr.edit td.thintdata {
+    width: 82px;
+    padding-right: 3px;
+}
+tr.edit td.thfloatdata {
+    width: 114px;
+    padding-right: 3px;
+}
+tr.edit td.thbooldata {
+    width: 62px;
+    padding-right: 14px;
+}
+tr.edit td.thdatedata {
+    width: 237px;
+    padding-right: 3px;
+}
+tr.edit td.thcomment {
+    
+    padding-right: 3px;
+}
+
+button {
+    padding-top: 10px;
+}
+
+#id, #intdata, #floatdata, #booldata, #datedata, #comment {
+    padding: 0;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+tr.edit td {
+    background-color: none;
+    
+}
